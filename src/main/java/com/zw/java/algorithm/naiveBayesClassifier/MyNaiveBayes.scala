@@ -26,7 +26,7 @@ class MyNaiveBayes private (private var lambda: Double, private var modelType: S
 
   // 设置模型类别
   def setModelType(modelType: String): MyNaiveBayes = {
-    require(MyNaiveBayes.supportedModelTypes.contains(modelType)),
+    require(MyNaiveBayes.supportedModelTypes.contains(modelType))
     this.modelType = modelType
     this
   }

@@ -1,5 +1,8 @@
 package com.zw.java.algorithm.SparkRecommendation
 
+import java.util
+import java.util.{HashMap, List, Map}
+
 import org.apache.spark.{SparkConf, SparkContext}
 
 import scala.collection.mutable.ArrayBuffer
@@ -34,6 +37,7 @@ object  SparkRecommendation {
         val directFriend = T2(toUser, -1l)
         var res = T2(person, directFriend)
         mapperOutput += res
+        res
       }
 
       // 可能的朋友
@@ -48,15 +52,39 @@ object  SparkRecommendation {
 
       }
 
-      mapperOutput.map( r => {
-        r
-      })
+//      mapperOutput.map( r => {
+//        r
+//      })
       mapperOutput.toList.flatten
+      mapperOutput.iterator
+
+     // mapperOutput.flatten
 
     })
 
     //
-    val recommendRdd =
+    val debug2 = pairsRdd.collect()
+       debug2.foreach( r => {
+      println("debug key" )
+    })
+
+    // 以key进行分组
+    val grouped = pairsRdd.groupBy(grouped)
+
+    val debug3 = grouped.collect()
+
+    debug3.foreach( r => {
+      println("debug3")
+    })
+
+    val recomendation = grouped.mapValues( r => {
+      val mutualFriends: util.Map[Long, util.List[Long]] = new util.HashMap[Long, util.List[Long]]
+
+    })
+
+
+
+
 
 
 

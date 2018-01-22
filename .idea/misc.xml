@@ -4,6 +4,7 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/../algorithm1/algorithm/pom.xml" />
       </list>
     </option>
   </component>
